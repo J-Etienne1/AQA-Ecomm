@@ -4,7 +4,7 @@ const { ProductPage } = require("../tests/pages/product-page");
 const { SearchPage } = require("../tests/pages/search-page");
 const { CartPage } = require("../tests/pages/cart-page");
 
-const { email, password } = require("./credentials");
+//const { email, password } = require("./credentials");
 
 
 test("test", async ({ page }) => {
