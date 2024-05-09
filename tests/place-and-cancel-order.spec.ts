@@ -5,6 +5,8 @@ const { SearchPage } = require("../tests/pages/search-page");
 const { CartPage } = require("../tests/pages/cart-page");
 const { CheckoutPage } = require("../tests/pages/checkout-page");
 const { PaymentsPage } = require("../tests/pages/payments-page");
+const { OrderConfirmationPage } = require("../tests/pages/order-confirmation-page");
+
 
 const { email, password } = require("./credentials");
 
@@ -16,6 +18,8 @@ test("test", async ({ page }) => {
   const cartPage = new CartPage(page);
   const checkoutPage = new CheckoutPage(page);
   const paymentsPage = new PaymentsPage(page);
+  const orderConfirmationPage = new OrderConfirmationPage(page);
+
 
   const cardDetails = {
     nameOnCard: "Jason",
@@ -35,4 +39,5 @@ test("test", async ({ page }) => {
   await checkoutPage.placeOrder();
   await paymentsPage.enterCardDetails(cardDetails);
   await paymentsPage.clickPayButton();
+  await orderConfirmationPage.confirmOrder();
 });
