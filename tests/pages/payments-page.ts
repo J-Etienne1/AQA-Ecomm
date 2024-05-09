@@ -14,7 +14,7 @@ exports.PaymentsPage = class PaymentsPage {
     this.CvcField = page.locator("input[data-qa='cvc']");
     this.ExpirationMonthField = page.locator("input[data-qa='expiry-month']");
     this.ExpirationYearField = page.locator("input[data-qa='expiry-year']");
-    this.PayButton = page.locator("input[data-qa='pay-button']");
+    this.PayButton = page.locator("button[data-qa='pay-button']");
   }
 
   async enterCardDetails(cardDetails){

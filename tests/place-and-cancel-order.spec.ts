@@ -17,6 +17,14 @@ test("test", async ({ page }) => {
   const checkoutPage = new CheckoutPage(page);
   const paymentsPage = new PaymentsPage(page);
 
+  const cardDetails = {
+    nameOnCard: "Jason",
+    cardNumber: "4242424242424242",
+    cvc: "123",
+    expirationMonth: "12",
+    expirationYear: "2030"
+  };
+
 
   await page.goto("https://www.automationexercise.com/");
   await page.screenshot({ path: "screenshot.jpg" });
@@ -25,6 +33,6 @@ test("test", async ({ page }) => {
   await productPage.addToCart();
   await cartPage.selectCart();
   await checkoutPage.placeOrder();
-  await paymentsPage.enterCardDetails();
+  await paymentsPage.enterCardDetails(cardDetails);
   await paymentsPage.clickPayButton();
 });
