@@ -4,7 +4,7 @@ exports.CheckoutPage = class CheckoutPage {
 
   constructor(page) {
     this.page = page;
-    this.placeOrderButton = page.locator("a[href='/payments']");
+    this.placeOrderButton = page.locator("a[href='/payment']");
   }
 
   async placeOrder() {
