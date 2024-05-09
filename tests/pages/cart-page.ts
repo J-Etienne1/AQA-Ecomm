@@ -8,7 +8,7 @@ exports.CartPage = class CartPage {
     this.cartButton = page.locator(
       "//a[contains(text(),'Cart')]/i[contains(@class, 'fa-shopping-cart')]"
     );
-    this.checkoutButton = page.locator("a[href='/view_cart']");
+    this.checkoutButton = page.locator("//a[contains(text(),'Proceed To Checkout')]");
   }
 
   async selectCart() {
