@@ -7,6 +7,7 @@ exports.CheckoutPage = class CheckoutPage {
     this.placeOrderButton = page.locator("a[href='/payment']");
   }
 
+
   async placeOrder() {
     await this.page.waitForURL("**/checkout");
     await this.placeOrderButton.click();
