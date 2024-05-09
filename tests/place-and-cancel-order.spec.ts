@@ -4,6 +4,7 @@ const { ProductPage } = require("../tests/pages/product-page");
 const { SearchPage } = require("../tests/pages/search-page");
 const { CartPage } = require("../tests/pages/cart-page");
 const { CheckoutPage } = require("../tests/pages/checkout-page");
+const { PaymentsPage } = require("../tests/pages/payments-page");
 
 const { email, password } = require("./credentials");
 
@@ -14,6 +15,8 @@ test("test", async ({ page }) => {
   const productPage = new ProductPage(page);
   const cartPage = new CartPage(page);
   const checkoutPage = new CheckoutPage(page);
+  const paymentsPage = new PaymentsPage(page);
+
 
   await page.goto("https://www.automationexercise.com/");
   await page.screenshot({ path: "screenshot.jpg" });
@@ -22,4 +25,6 @@ test("test", async ({ page }) => {
   await productPage.addToCart();
   await cartPage.selectCart();
   await checkoutPage.placeOrder();
+  await paymentsPage.enterCardDetails();
+  await paymentsPage.clickPayButton();
 });
