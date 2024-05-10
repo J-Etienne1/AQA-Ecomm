@@ -1,5 +1,3 @@
-const { expect } = require("@playwright/test");
-
 exports.ApiCall = class ApiCall {
   request: any;
 
