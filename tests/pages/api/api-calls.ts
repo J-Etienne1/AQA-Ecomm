@@ -1,3 +1,5 @@
+const { expect } = require("@playwright/test");
+
 exports.ApiCall = class ApiCall {
   request: any;
 
@@ -6,9 +8,10 @@ exports.ApiCall = class ApiCall {
   }
 
   async getAllProducts() {
-    const response = await this.request.get("https://automationexercise.com/api/productsList");
+    const response = await this.request.get(
+      "https://automationexercise.com/api/productsList"
+    );
 
-    expect(response.ok()) 
-
+    expect(response.ok());
   }
 };

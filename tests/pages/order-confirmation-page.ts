@@ -1,5 +1,3 @@
-const { expect } = require("@playwright/test");
-
 exports.OrderConfirmationPage = class OrderConfirmationPage {
     page: any;
     orderConfirmationHeader: any;
