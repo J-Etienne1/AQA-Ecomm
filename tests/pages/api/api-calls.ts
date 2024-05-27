@@ -6,6 +6,7 @@ exports.ApiCall = class ApiCall {
   constructor(request) {
     this.request = request;
   }
+  
 
   async getAllProducts() {
     const response = await this.request.get(
